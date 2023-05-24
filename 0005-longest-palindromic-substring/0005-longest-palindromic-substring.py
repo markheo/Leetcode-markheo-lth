@@ -1,8 +1,8 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        first, last = 0, len(s)
+        last = len(s)
         num = 1
-        if s[first:last] == s[last::-1]:
+        if s == s[::-1]:
             return s
         else:
             while num < last:
