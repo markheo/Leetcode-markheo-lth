@@ -35,7 +35,7 @@ class Solution:
                 num_dct[group] = partSum
             # making num_dct has finished
             
-            # (1) if lst has multiple elements
+            # (1) more than one partition
             if lst:
                 if num_dct:
                     if len(num_dct) > 1:
@@ -46,7 +46,7 @@ class Solution:
 
                 return max(lst)
             
-            # (2) if lst has only one element
+            # (2) no partition
             else:
                 if len(num_dct) > 1:
                     tmp = [num_dct[i] + num_dct[i+1] for i in range(1, len(num_dct))]
