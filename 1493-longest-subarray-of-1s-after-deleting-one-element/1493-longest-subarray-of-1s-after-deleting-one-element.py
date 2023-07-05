@@ -34,7 +34,9 @@ class Solution:
 
             if partSum > 0:
                 num_dct[group] = partSum
-
+            # num_dct finished
+            
+            # (1) if lst has multiple elements
             if lst:
                 if num_dct:
                     if len(num_dct) > 1:
@@ -44,7 +46,8 @@ class Solution:
                         lst.append(num_dct[1])
 
                 return max(lst)
-
+            
+            # (2) if lst has only one element
             else:
                 if len(num_dct) > 1:
                     tmp = [num_dct[i] + num_dct[i+1] for i in range(1, len(num_dct))]
