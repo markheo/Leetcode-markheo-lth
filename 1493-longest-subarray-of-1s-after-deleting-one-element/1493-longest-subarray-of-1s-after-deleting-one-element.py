@@ -20,12 +20,11 @@ class Solution:
                     num_dct[group] = partSum
                     partSum = 0
                     group += 1
-                # 중간에 0이 여러개 들어가 있는 경우
+                    
+                # 중간에 0이 여러개 들어가 있는 경우(partition)
                 elif (n==0) and (partSum==0) and num_dct:
                     if len(num_dct) > 1:
-                        # print(num_dct)
                         tmp = [num_dct[i] + num_dct[i+1] for i in range(1, len(num_dct))]
-                        # print(tmp)
                         lst.append(max(tmp))
                     else:
                         lst.append(num_dct[1])
@@ -34,7 +33,7 @@ class Solution:
 
             if partSum > 0:
                 num_dct[group] = partSum
-            # num_dct finished
+            # making num_dct has finished
             
             # (1) if lst has multiple elements
             if lst:
